@@ -185,7 +185,6 @@ fn match_from(title: &ImdbTitle, with_title: bool) -> ProviderMatch {
     if with_title {
         fields["title"] = serde_json::json!(title.title);
         fields["year"] = serde_json::json!(title.year);
-        fields["overview"] = serde_json::json!("");
     }
     ProviderMatch {
         poster_url: title.image_url.as_deref().map(|u| resized(u, 500)),
